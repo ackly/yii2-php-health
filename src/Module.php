@@ -12,14 +12,16 @@ use yii\base\BootstrapInterface;
  *
  * ~~~
  * return [
- *     'applicationName' => 'YOUR APP NAME',
- *     'bootstrap' => ['yii-health'],
+ *     'bootstrap' => ['health'],
  *     'modules' => [
- *         'yii' => ['class' => 'Ackly\YiiHealth\Module'],
+ *         'health' => [
+ *              'applicationName' => 'YOUR APP NAME',
+ *              'class' => 'Ackly\YiiHealth\Module'
+ *              'checks' => [],
+ *              'checkArgs' => [],
+ *              'dependencies' => []
+ *         ],
  *     ],
- *     'checks' => [],
- *     'checkArgs' => [],
- *     'dependencies' => []
  * ]
  * ~~~
  *

@@ -19,16 +19,6 @@ class DefaultController extends Controller
     public $module;
 
     /**
-     * @inheritdoc
-     */
-    public function beforeAction($action)
-    {
-        Yii::$app->response->format = Response::FORMAT_JSON;
-
-        return parent::beforeAction($action);
-    }
-
-    /**
      * @return string
      * @throws \Exception
      */
@@ -56,12 +46,14 @@ class DefaultController extends Controller
             }
         }
 
-        $content = $check->run($args);
+        $response = new Response();
+        $response->content = $check->run($args);
+        $response->format = Response::FORMAT_JSON;
 
         if ($check->result['status'] == 'error') {
-            Yii::$app->response->statusCode = 500;
+            $response->setStatusCode(500);
         }
 
-        return $content;
+        return $response;
     }
 }
