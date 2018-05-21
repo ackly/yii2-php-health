@@ -1,0 +1,23 @@
+{
+    "name": "ackly/yii2-php-health",
+    "description": "Health check for yii2 applications",
+    "type": "yii2-extension",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Andrey Stroganov",
+            "email": "a.stroganov@vsemayki.ru"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Ackly\\YiiHealth\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=7.0.0",
+        "yiisoft/yii2": ">=2.0.5",
+        "ackly/x-php-health": "^0.0.4"
+    }
+}
